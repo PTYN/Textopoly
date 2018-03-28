@@ -50,8 +50,12 @@ while flag == True:
 		print()
 
 	#giving the player's info
-	elif command.split()[0] == "info":
-		if command.split()[1] == "player":
+	infocheck = command.split()
+
+	if infocheck[0] == "info":
+		if len(infocheck) == 1:
+			print("Invalid input")
+		elif infocheck [1] == "player":
 			print("Character: ")
 			print("Money: ")
 			print("Properties: ")
@@ -74,6 +78,9 @@ while flag == True:
 #					print("")
 #					print("Price of single building: $" + boardpos[i][buildprice])
 #					print("")
+		else:
+			print("Invalid input, try 'info player' or 'info properties'")
+			print()
 
 	#buying the property that they are on
 	elif command == "buy":
