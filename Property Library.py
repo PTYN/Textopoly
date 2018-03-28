@@ -1,3 +1,4 @@
+#indexing assistance
 name = 0
 colour = 1
 price = 2
@@ -10,6 +11,7 @@ hotel = 8
 buildprice = 9
 owner = 10
 
+#library
 a = ['Go']
 b = ["Old Kent Rd", "brown", "60", "2", "10", "30", "90", "160", "250", "50"]
 c = ['Community Chest']
@@ -51,10 +53,13 @@ al = ['Park Ln', 'dark blue', '350', '35', '175', '500', '1100', '1300', '1500',
 am = ['Super Tax']
 an = ['Mayfair', 'dark blue', '400', '50', '200', '600', '1400', '1700', '2000', '200']
 
+#List of properties
 boardpos = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, aa, ab, ac, ad, ae, af, ag, ah, ai, aj, ak, al, am, an]
 
+#print ALL property details
 for i in range(0, len(boardpos)):
 	if (len(boardpos[i]) == 9)or (len(boardpos[i]) == 10):
+		#print 1 set of property details
 		print(boardpos[i][name])
 		print("- " + boardpos[i][colour].title() + " -")
 		print("Price: $" + boardpos[i][price])
