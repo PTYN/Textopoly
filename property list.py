@@ -70,8 +70,3 @@ for i in range(0, len(boardpos)):
 	elif len(boardpos[i]) == 1:
 		print(">>> " + boardpos[i][name])
 		print('')
-
-	
-
-
-
