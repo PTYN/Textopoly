@@ -23,10 +23,10 @@ while flag == True:
 	elif command == "?":
 		print("end - ends your turn")
 		print("roll - rolls for your turn, letting you move that number of spaces.")
-		print("info - for player info (money, properties etc.)")
-		#print("info [property name] - get the info for a property you own.")
+		print("info player - for your player info (money, properties etc.)")
+		print("info property - get the info for a property you specify.")
 		print("buy - attempt to buy the property your piece is currently on.")
-		#print("buy house [property name] - attempt to buy a house on a property you own")
+		#print("buy house - attempt to buy a house on a property you own")
 		print()
 	
 	#Rolling the dice, allowing it to be ready for visual dice.
