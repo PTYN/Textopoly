@@ -52,7 +52,8 @@ while flag == True:
 	elif (command == "roll") & (hasrolled == True):
 		print("You've already rolled, you can't roll again")
 		print()
-		
+	
+	#Basic info command	
 	elif infocheck[0] == "info":
 		if len(infocheck) == 1:
 			print("Invalid input, try 'info player' or 'info properties'")
