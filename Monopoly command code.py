@@ -10,6 +10,10 @@ rollcount = 0
 command = input("What do you want me to do? ").lower()
 
 while flag == True: 
+	
+	#giving the player's info
+	infocheck = command.split()
+	
 	#Making sure that you don't end turn before rolling the dice.
 	if (command == "end") & (hasrolled == False):
 		print("You can't end now, you have to at least roll.")
@@ -48,13 +52,11 @@ while flag == True:
 	elif (command == "roll") & (hasrolled == True):
 		print("You've already rolled, you can't roll again")
 		print()
-
-	#giving the player's info
-	infocheck = command.split()
-
-	if infocheck[0] == "info":
+		
+	elif infocheck[0] == "info":
 		if len(infocheck) == 1:
-			print("Invalid input")
+			print("Invalid input, try 'info player' or 'info properties'")
+			print()
 		elif infocheck [1] == "player":
 			print("Character: ")
 			print("Money: ")
