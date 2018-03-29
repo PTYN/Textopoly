@@ -57,22 +57,22 @@ an = ['Mayfair', 'dark blue', '400', '50', '200', '600', '1400', '1700', '2000',
 boardpos = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, aa, ab, ac, ad, ae, af, ag, ah, ai, aj, ak, al, am, an]
 
 #print ALL property details
-for i in range(0, len(boardpos)):
-	if (len(boardpos[i]) == 9)or (len(boardpos[i]) == 10):
-		#print 1 set of property details
-		print(boardpos[i][name])
-		print("- " + boardpos[i][colour].title() + " -")
-		print("Price: $" + boardpos[i][price])
-		print("Rent with no buildings: $" + boardpos[i][rent])
-		print("    \"     one house: $" + boardpos[i][onehouse])
-		print("    \"     two houses: $" + boardpos[i][twohouse])
-		print("    \"     three houses: $" + boardpos[i][threehouse])
-		print("    \"     four houses: $" + boardpos[i][fourhouse])
-		print("    \"     hotel: $" + boardpos[i][hotel])
-		print("")
-		print("Price of single building: $" + boardpos[i][buildprice])
-		print("")
-	elif len(boardpos[i]) == 1:
-		print(">>> " + boardpos[i][name])
-		print('')
+#for i in range(0, len(boardpos)):
+#	if (len(boardpos[i]) == 9)or (len(boardpos[i]) == 10):
+#		#print 1 set of property details
+#		print(boardpos[i][name])
+#		print("- " + boardpos[i][colour].title() + " -")
+#		print("Price: $" + boardpos[i][price])
+#		print("Rent with no buildings: $" + boardpos[i][rent])
+#		print("    \"     one house: $" + boardpos[i][onehouse])
+#		print("    \"     two houses: $" + boardpos[i][twohouse])
+#		print("    \"     three houses: $" + boardpos[i][threehouse])
+#		print("    \"     four houses: $" + boardpos[i][fourhouse])
+#		print("    \"     hotel: $" + boardpos[i][hotel])
+#		print("")
+#		print("Price of single building: $" + boardpos[i][buildprice])
+#		print("")
+#	elif len(boardpos[i]) == 1:
+#		print(">>> " + boardpos[i][name])
+#		print('')
 	
