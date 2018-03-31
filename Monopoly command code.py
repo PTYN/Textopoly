@@ -28,24 +28,24 @@ def propertycard(p):
 	print("")
 	print("Price of single building: $" + boardpos[p][buildprice])
 	print("")
-		
+
 command = input("What would you like to do? ").lower()
 
-while flag == True: 
-	
+while flag == True:
+
 	#giving the player's info
 	infocheck = command.split()
-	
+
 	#Making sure that you don't end turn before rolling the dice.
 	if ((command == "end turn") or (command == "end")) & (hasrolled == False):
 		print("You can't end your turn now, you have to roll!")
 		print()
-		
+
 	#Ending the loop
 	elif (command == "end") or (command == "end turn"):
 			break
-		
-	#Bringing up the command list	
+
+	#Bringing up the command list
 	elif command == "?":
 		print("end - ends your turn")
 		print("roll - rolls for your turn, letting you move that number of spaces.")
@@ -55,7 +55,7 @@ while flag == True:
 		print("buy - attempt to buy the property your piece is currently on.")
 		#print("buy house - attempt to buy a house on a property you own")
 		print()
-	
+
 	#Rolling the dice, allowing it to be ready for visual dice.
 	elif (command == "roll") & (hasrolled == False):
 		dice1 = random.randint(1,6)
@@ -76,23 +76,23 @@ while flag == True:
 				playerpos = 10
 				print("You rolled three doubles! That's speeding, you're in jail!")
 				injail = True
-			
+
 	#Telling that they can't roll again.
 	elif (command == "roll") & (hasrolled == True):
 		print("You've already rolled, you can't roll again.")
 		print()
-	
-	#Basic info command	
+
+	#Basic info command
 	elif (infocheck[0] == "info") or (infocheck[0] == "i"):
 		if len(infocheck) == 1:
 			print("Invalid input, try 'info player', 'info property', or 'info tile'")
 			print()
-			
-		#gives current player stats	
+
+		#gives current player stats
 		elif infocheck [1] == "player":
 			print("Character:", playerchar)
 			print("Money: $" + str(playermoney))
-			
+
 			for o in ownedprops:
 				print("Properties:", o[name], end=" ")
 			print("")
@@ -106,9 +106,9 @@ while flag == True:
 					if boardpos[i][owner] == "":
 						pass
 					else:
-						print("Owned by", boardpos[i][owner])	
+						print("Owned by", boardpos[i][owner])
 						print("")
-		
+
 		#getting info for tile
 		elif command.split()[1] == "tile":
 			if len(boardpos[playerpos]) == 11:
@@ -123,7 +123,10 @@ while flag == True:
 				print("This is a Chance card. It's much more varied in its effects than a Community Chest, and you won't always like what you get. High risk, high reward!")
 				print("")
 			elif boardpos[playerpos][name] == "Income Tax":
-				print("Uh oh. This is the Income Tax tile, and it means you'll have to pay $200 to the bank! Such is the cost of being so darn rich.")
+				print("Uh oh. This is the Income Tax tile, and it means you'll have to pay $200 to the bank! Such is the cost of being so darn rich!")
+				print("")
+			elif boardpos[playerpos][name] == "Super Tax":
+				print("Uh oh. This is the Super Tax tile, and it means you'll have to pay $100 to the bank! It's what you get for working towards a stable retirement!")
 				print("")
 
 		else:
@@ -158,10 +161,10 @@ while flag == True:
 		else:
 			print("You do not have enough money for that.")
 			print()
-	
+
 	#error statement for invalid commands
 	else:
 		print ("Not a valid command. (enter ? for command list)")
 		print()
-	
+
 	command = input("What would you like to do? ").lower()
