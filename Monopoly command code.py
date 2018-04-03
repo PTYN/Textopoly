@@ -18,12 +18,22 @@ doublecount = 0
 #experimental lists for tracking players and money
 money_bank = [1500, 1500, 1500, 1500]
 player_list = [1, 2, 3, 4]
-def show_money(player):
+def show_money(player):				#says (boi has 3000 dollars), but also returns money value of player for other uses
 	real_player = player - 1
 	print("Player", player, "has", str(money_bank[real_player]), "MONOPOLY Dollars")
-def cash_display():
+	return money_bank[real_player]
+def cash_display():			#Shows everyone's cash
 	for i in player_list:
 	show_money(i)
+def player_card(player):		#Template for player cards
+	print("""
+	+++++++++++++++++++++++++++++++++
+	|	   Player ∆		|
+	| cash:""", show_money(1), """			|
+	| location: mafair		|
+	| owned property:""", str(ownedprops), """
+	+++++++++++++++++++++++++
+""")
 #experimental stuff over
 
 def propertycard(p):
