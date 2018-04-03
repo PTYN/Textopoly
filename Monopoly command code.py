@@ -14,6 +14,18 @@ injail = False
 rollcount = 0
 doublecount = 0
 
+
+#experimental lists for tracking players and money
+money_bank = [1500, 1500, 1500, 1500]
+player_list = [1, 2, 3, 4]
+def show_money(player):
+	real_player = player - 1
+	print("Player", player, "has", str(money_bank[real_player]), "MONOPOLY Dollars")
+def cash_display():
+	for i in player_list:
+	show_money(i)
+#experimental stuff over
+
 def propertycard(p):
 	print("")
 	print(boardpos[p][name])
@@ -28,6 +40,59 @@ def propertycard(p):
 	print("")
 	print("Price of single building: $" + boardpos[p][buildprice])
 	print("")
+
+def show_dice():
+	#dice art (Only front face from: Joan G. Stark, https://www.asciiart.eu/miscellaneous/dice)
+	for dice in [dice1, dice2]:
+		if dice == 1:
+			print("""
+	 _______
+	|       |
+	|   o   |
+	|       |
+	'-------'
+		""")
+		elif dice == 2:
+			print("""
+	 _______
+	|     o |
+	|       |
+	| o     |
+	'-------'
+		""")
+		elif dice == 3:
+			print("""
+		 _______
+		|     o |
+		|   o   |
+		| o     |
+		'-------'
+		""")
+		elif dice == 4:
+			print("""
+		 _______
+		| o   o |
+		|       |
+		| o   o |
+		'-------'
+		""")
+		elif dice == 5:
+			print("""
+			 _______
+			| o   o |
+			|   o   |
+			| o   o |
+			'-------'
+		""")
+		elif dice == 6:
+			print("""
+			 _______
+			| o   o |
+			| o   o |
+			| o   o |
+			'-------'
+		""")
+
 
 command = input("What would you like to do? ").lower()
 
@@ -61,7 +126,8 @@ while flag == True:
 		dice1 = random.randint(1,6)
 		dice2 = random.randint(1,6)
 		rollturn = dice1+dice2
-		#print(dice1)
+		show_dice()
+		#print(dice1) 
 		#print(dice2)
 		playerpos += rollturn
 		print("You have moved", rollturn ,"spaces! You're now on", boardpos[playerpos][name] + ".")
